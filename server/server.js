@@ -23,7 +23,13 @@ app.post('/todos', (req,res) => {           //post route to create resource
     })
 });
 
-
+app.get('/todos',(req,res) => {
+    Todo.find().then((todos) =>{
+        res.send({todos});
+    },(e) => {
+        res.status(400).send(e);
+    })
+});
 
 app.listen(3000, () => {                //listening to a port
 
