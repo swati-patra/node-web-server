@@ -17,7 +17,7 @@ app.post('/todos', (req,res) => {           //post route to create resource
     });
 
     todo.save().then((doc) => {
-        res.send(doc);
+        res.send(doc);                            //information at postman
     },(err) =>{
         res.status(400).send(err);
     })
@@ -31,7 +31,7 @@ app.listen(3000, () => {                //listening to a port
 });           
 
 
-
+module.exports = {app};
 
 
 
