@@ -8,6 +8,7 @@ var {User} = require('./models/user');
 
 
 var app = express();                   // app stores the application of express
+const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());              //middlewere
 
@@ -50,9 +51,9 @@ app.get('/todos/:id',(req,res) => {
 });
 
 
-app.listen(3000, () => {                //listening to a port
+app.listen(PORT, () => {                //listening to a port
 
-    console.log('started on port 3000');
+    console.log(`started on port ${PORT}`);
 });           
 
 
